@@ -31,3 +31,7 @@ To create such a system we use an LSTM Neural Network to classify text in politi
 ### Data
 This project used a corpus of political ads from facebook's political ad library via API. There are limits on raw data sharing allowed by facebook, so the original data will not be posted.  Using the code and your own facebook API key a user should be able to replicate this project.  This could similarly be used for political content from other ad libraries (ie twitter, google) with some modifications to the code.
 
+
+### Files 
+ad_scrape_notebook - calls facebook graph API (you need your own API key/Access Token)
+model_file_for_aws_ec2.py - Training file for neural network, this should ideally be run in AWS GPU enabled ec2 instance.  This file can be run in an AWS ec2 instance to 
