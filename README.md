@@ -7,7 +7,7 @@ This engine would serve users content topically similar to content the user inte
 
 Recommender systems tend to create what social scientists and tech activists have dubbed 'filter bubbles' - online environments where content serving algorithms feed users content that conforms to their existing beliefs while shielding users from content they may disagree with. 
 
-![filter_bubble_illustration](/images/filter_bubble_slide.PNG)
+![filter_bubble_illustration](/images/filter_bubble.PNG)
 
 Recommenders are creating environments where many people from different political and social groups can exist on the same planet but are living in different media worlds.  
 
