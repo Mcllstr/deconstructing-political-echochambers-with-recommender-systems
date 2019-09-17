@@ -2,11 +2,11 @@ Combating Political Filter Bubbles and Echo Chambers with Recommender Systems
 -----------------------------------------------
 
 This project envisions an architecture for a content based recommender system that combats political echo chambers and filter bubbles by exposing users to viewpoints across the political spectrum.
-This engine would serve users content topically similar to what the user interacted with but from the opposing political spectrum.  
-Note - this is meant to be a strictly non-partisan project, the system will attempt to recommend content from the opposite political spectrum regardless of wether a user interacts with liberal or conservative content.  
+This engine would serve users content topically similar to what the user previously interacted with but from the opposing political spectrum.  
+This is meant to be a non-partisan project, regardless of whether a user interacts with left-wing or right-wing content the system will attempt to serve content from the opposite political spectrum.  
 
 -----------------------------------------------
-This is a real sample output from the system: on the left you have a user clicked ad and on the right is the ad the system would recommend.   
+This is a real sample recommendation from the system: on the left you have a user clicked ad and on the right is the ad the system would recommend.   
 -----------------------------------------------
 ![recommender_example_output](/images/engine_output.png)
 
