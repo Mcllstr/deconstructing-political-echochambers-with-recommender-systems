@@ -2,7 +2,7 @@ Combating Political Filter Bubbles and Echo Chambers with Recommender Systems
 -----------------------------------------------
 
 This project envisions an architecture for a content based recommender system that combats political echo chambers and filter bubbles by exposing users to viewpoints across the political spectrum.
-This engine would serve users content topically similar to what the user previously interacted with but from the opposing political spectrum.  
+This engine is designed to serve users content topically similar to what the user previously interacted with but from the opposing political spectrum.  
 This is meant to be a non-partisan project, regardless of whether a user interacts with left-wing or right-wing content the system will attempt to serve content from the opposite political spectrum.  
 
 -----------------------------------------------
@@ -17,14 +17,16 @@ Recommender systems tend to create what social scientists and tech activists hav
 ![filter_bubble_illustration](/images/filter_bubble.png)
 
 Recommenders are creating environments where many people from different political and social groups can exist on the same planet but are living in different media worlds.  
-
+-----------------------------------------------
 ![liberal_conservative_fb](/images/liberal_conservative_fb.png)
 
-Many social scientists believe this is at least partly to blame for an increasingly ideologically polarized society.  Filter bubbles have extremely negative consequences for democratic societies. If people cannot understand eachother, if people cannot come together and agree on basic sets of facts, then we cannot collectively solve problems. 
+Filter bubbles have extremely negative consequences for democratic societies 
+-----------------------------------------------
+Many social scientists social media filter bubbles/echo chambers for an increasingly ideologically polarized society.  If people cannot understand eachother, if people cannot come together and agree on basic sets of facts, then we cannot collectively solve problems. 
 
 This project envisions a different kind of recommender system that breaks down filter bubbles rather than reinforcing them.  
 
-To create such a system we use an LSTM Neural Network to classify text in political content as either liberal or conservative leaning, and TF-IDF vectorization with cosine similarity scoring to search for topically similar content.  The two NLP methods work together to serve content topically related to the content the user interacted with from opposite side of the political spectrum.  
+To create such a system we use an LSTM Neural Network to classify text in political content as either liberal or conservative leaning, and TF-IDF vectorization with cosine similarity scoring to search for topically similar content.  The supervised and unsupervised methods work together to serve content topically related to the content the user interacted with from opposite side of the political spectrum.  
 
 ![high_level_architecture](/images/high_level_structure.png)
 
@@ -33,5 +35,9 @@ This project used a corpus of political ads from facebook's political ad library
 
 
 ### Files 
-ad_scrape_notebook - calls facebook graph API (you need your own API key/Access Token)
-model_file_for_aws_ec2.py - Training file for neural network, this should ideally be run in AWS GPU enabled ec2 instance.  This file can be run in an AWS ec2 instance to 
+ad_scrape_notebook - retrieves ads from facebook graph API (you need your own API key/Access Token), processes data and saves funders to csv for left right classification, remaps labeled csv to ads in your corpus and creates a csv file of training data readable by model_file_for_aws_ec2.py.
+model_file_for_aws_ec2.py - Training file for neural network, this should ideally be run in AWS GPU enabled ec2 instance with supporting  GoogleNews-vectors-negative300.bin.gz (code to download is in ad_scrape_notebook.ipynb) and the ad content training data generated in ad_scrape_notebook.  The trained neural net model will be saved as a pickle file and sent to an s3 bucket (in this file it is recommender_project_bucket, will need to change to your own s3 bucket or modify code in file to download directly to your machine.
+recommend_content_notebook_demo - This notebook takes rnn_model_x.pickle and your content corpus and generates recommendations.
+
+
+
