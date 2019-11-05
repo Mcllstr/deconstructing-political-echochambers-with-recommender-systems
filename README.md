@@ -35,9 +35,9 @@ This project used a corpus of political ads from facebook's political ad library
 
 
 ### Files 
-ad_scrape_notebook - retrieves ads from facebook graph API (you need your own API key/Access Token), processes data and saves funders to csv for left right classification, remaps labeled csv to ads in your corpus and creates a csv file of training data readable by model_file_for_aws_ec2.py.
-model_file_for_aws_ec2.py - Training file for neural network, this should ideally be run in AWS GPU enabled ec2 instance with supporting  GoogleNews-vectors-negative300.bin.gz (code to download is in ad_scrape_notebook.ipynb) and the ad content training data generated in ad_scrape_notebook.  The trained neural net model will be saved as a pickle file and sent to an s3 bucket (in this file it is recommender_project_bucket, will need to change to your own s3 bucket or modify code in file to download directly to your machine.
-recommend_content_notebook_demo - This notebook takes rnn_model_x.pickle and your content corpus and generates recommendations.
+- ad_scrape_notebook - retrieves ads from facebook graph API (you need your own API key/Access Token), processes data and saves funders to csv for left right classification, remaps labeled csv to ads in your corpus and creates a csv file of training data readable by model_file_for_aws_ec2.py.
+- model_file_for_aws_ec2.py - Training file for neural network, this should ideally be run in AWS GPU enabled ec2 instance with supporting  GoogleNews-vectors-negative300.bin.gz (code to download is in ad_scrape_notebook.ipynb) and the ad content training data generated in ad_scrape_notebook.  The trained neural net model will be saved as a pickle file and sent to an s3 bucket (in this file it is recommender_project_bucket, will need to change to your own s3 bucket or modify code in file to download directly to your machine.
+- recommend_content_notebook_demo.ipynb - This notebook takes rnn_model_x.pickle and your content corpus and generates recommendations.
 
 
 
