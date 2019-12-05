@@ -222,9 +222,9 @@ with open(src_path+"rnn_model_3.pickle", "rb") as f:
 #######################################
 
 # with open('/content/drive/My Drive/g_model.pickle', 'rb') as f:
-#     dese_pickles = pickle.load(f)
+#     trained_nn_pickle = pickle.load(f)
 
-# model_is_back = dese_pickles['model']
+# model_is_back = trained_nn_pickle['model']
 
 # a_test = tokenizer.texts_to_sequences(X_[:5])
 # a_padded_test = pad_sequences(a_test, maxlen=MAX_SEQUENCE_LENGTH, padding='post')
